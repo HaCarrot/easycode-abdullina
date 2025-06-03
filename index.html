@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер задач на день</title>
+    <link rel="stylesheet" href="idex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Таймер задач на день</h1>
+        
+        <div class="setup-phase" id="setupPhase">
+            <div class="task-form">
+                <input type="text" id="taskInput" placeholder="Введите задачу">
+                <div class="time-controls">
+                    <div>
+                        <label for="workTime">Время работы (мин):</label>
+                        <input type="number" id="workTime" min="1" value="25">
+                    </div>
+                </div>
+                <button id="addTaskBtn">Добавить задачу</button>
+            </div>
+            
+            <div class="task-list" id="taskList"></div>
+            
+            <button id="startDayBtn" class="primary-btn">Начать день</button>
+        </div>
+        
+        <div class="timer-phase" id="timerPhase" style="display: none;">
+            <div class="timer-container">
+                <div class="timer-display" id="timerDisplay">25:00</div>
+                <div class="timer-status" id="timerStatus">Готов к работе</div>
+                <div class="current-task" id="currentTask"></div>
+                <div class="timer-controls">
+                    <button id="startTimerBtn" class="primary-btn">Старт</button>
+                    <button id="pauseTimerBtn" disabled>Пауза</button>
+                    <button id="finishDayBtn" class="secondary-btn">Завершить день</button>
+                </div>
+            </div>
+            
+            <div class="completed-tasks">
+                <h3>Выполненные задачи:</h3>
+                <div id="completedTasksList"></div>
+            </div>
+            
+            <div class="summary" id="summary" style="display: none;">
+                <h3>Итоги дня:</h3>
+                <div id="completedSummary"></div>
+                <div id="uncompletedSummary"></div>
+                <button id="restartDayBtn" class="primary-btn">Начать новый день</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
